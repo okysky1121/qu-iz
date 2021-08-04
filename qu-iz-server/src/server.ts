@@ -1,6 +1,9 @@
+import dotenv from 'dotenv';
 import App from './app';
 
-const port = 3000;
+dotenv.config();
+
+const port = parseInt(process.env.PORT!) || 3000;
 const app = new App(port);
 
 app.on('start', port => {
