@@ -1,8 +1,8 @@
 import { Router } from 'express';
 
 abstract class Controller {
-  public abstract path: string;
-  public router: Router = Router();
+  public abstract readonly path: string;
+  public readonly router: Router = Router();
 
   constructor() {
     this.mount();
