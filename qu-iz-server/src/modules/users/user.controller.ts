@@ -1,19 +1,18 @@
-import { Request, Response } from 'express';
 import Controller from '../../types/controller.class';
 
 class UserController extends Controller {
   public readonly path: string = '/users';
 
   protected mount(): void {
-    this.router.get('/', this.getUser);
-    this.router.post('/', this.createUser);
+    this.mounter.get('/', this.getUser);
+    this.mounter.post('/', this.createUser);
   }
 
-  private getUser(req: Request, res: Response): void {
+  private async getUser(req: TypedRequest, res: TypedResponse): Promise<void> {
     res.send('This action gets user data');
   }
 
-  private createUser(req: Request, res: Response): void {
+  private async createUser(req: TypedRequest, res: TypedResponse): Promise<void> {
     res.send('This action creates user');
   }
 }

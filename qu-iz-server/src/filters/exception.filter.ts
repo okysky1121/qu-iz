@@ -1,4 +1,4 @@
-import { Application, NextFunction, Request, Response } from 'express';
+import { Application, NextFunction } from 'express';
 import HttpException from '../exceptions/http.exception';
 import NotfoundException from '../exceptions/notfound.exception';
 
@@ -8,7 +8,7 @@ class ExceptionFilter {
       throw new NotfoundException();
     });
 
-    application.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+    application.use((err: Error, req: TypedRequest, res: TypedResponse, next: NextFunction) => {
       if (err instanceof HttpException) {
         res.status(err.status);
         res.json({ ok: false, message: err.message });
