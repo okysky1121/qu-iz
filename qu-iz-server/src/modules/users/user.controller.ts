@@ -1,4 +1,4 @@
-import Controller from '../../types/controller.class';
+import Controller from '@classes/controller.class';
 
 class UserController extends Controller {
   public readonly path: string = '/users';

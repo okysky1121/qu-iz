@@ -1,6 +1,6 @@
+import HttpException from '@exceptions/http.exception';
+import NotfoundException from '@exceptions/notfound.exception';
 import { Application, NextFunction } from 'express';
-import HttpException from '../exceptions/http.exception';
-import NotfoundException from '../exceptions/notfound.exception';
 
 class ExceptionFilter {
   public static use(application: Application): void {

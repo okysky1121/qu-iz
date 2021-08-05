@@ -1,5 +1,5 @@
+import AsyncUtil from '@utils/async.util';
 import { Router } from 'express';
-import AsyncUtil from '../utils/async.util';
 
 class ControllerMounter {
   private readonly router: Router;

@@ -6,6 +6,13 @@
     "sourceMap": false,
     "outDir": "dist",
     "baseUrl": "./src",
+    "paths": {
+      "@classes/*": ["classes/*"],
+      "@exceptions/*": ["exceptions/*"],
+      "@filters/*": ["filters/*"],
+      "@modules/*": ["modules/*"],
+      "@utils/*": ["utils/*"]
+    },
     "strict": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,

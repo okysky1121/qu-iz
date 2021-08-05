@@ -1,7 +1,7 @@
+import Controller from '@classes/controller.class';
+import ExceptionFilter from '@filters/exception.filter';
 import EventEmitter from 'events';
 import express, { Application } from 'express';
-import ExceptionFilter from './filters/exception.filter';
-import Controller from './types/controller.class';
 
 declare interface App {
   on(event: 'load', listener: () => void): this;

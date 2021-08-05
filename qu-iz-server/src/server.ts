@@ -1,7 +1,7 @@
+import Controller from '@classes/controller.class';
+import UserController from '@modules/users/user.controller';
 import dotenv from 'dotenv';
 import App from './app';
-import UserController from './modules/users/user.controller';
-import Controller from './types/controller.class';
 
 dotenv.config();
 
