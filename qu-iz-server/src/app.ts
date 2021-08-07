@@ -2,6 +2,7 @@ import Controller from '@classes/controller.class';
 import ExceptionFilter from '@filters/exception.filter';
 import EventEmitter from 'events';
 import express, { Application } from 'express';
+import mongoose from 'mongoose';
 
 declare interface App {
   on(event: 'load', listener: () => void): this;
@@ -28,9 +29,18 @@ class App extends EventEmitter {
     ExceptionFilter.use(this.application);
   }
 
-  public load(controllers: Controller[]): void {
+  private async loadDatabase(): Promise<void> {
+    mongoose.connect(process.env.DB_PATH!, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+    });
+  }
+
+  public async load(controllers: Controller[]): Promise<void> {
     this.loadControllers(controllers);
     this.loadFilters();
+    await this.loadDatabase();
     this.loaded = true;
     this.emit('load');
   }

@@ -18,5 +18,4 @@ app.on('start', port => {
   console.log(`Server started in port ${port}`);
 });
 
-app.load(controllers);
-app.start();
+app.load(controllers).then(() => app.start());
