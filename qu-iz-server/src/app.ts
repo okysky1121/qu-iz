@@ -1,8 +1,6 @@
 import Controller from '@classes/controller.class';
 import ExceptionFilter from '@filters/exception.filter';
 import JwtPipe from '@pipes/jwt.pipe';
-import ServiceProvider from '@providers/service.provider';
-import Service from '@services/base.service';
 import EventEmitter from 'events';
 import express, { Application } from 'express';
 import mongoose from 'mongoose';
@@ -22,17 +20,12 @@ class App extends EventEmitter {
     this.port = port;
   }
 
-  private loadProviders(services: typeof Service[]): void {
-    ServiceProvider.load(services);
-  }
-
   private loadPipes(): void {
     JwtPipe.use(this.application);
   }
 
   private loadControllers(controllers: Controller[]): void {
     for (const controller of controllers) {
-      controller.load();
       this.application.use(controller.path, controller.router);
     }
   }
@@ -49,8 +42,7 @@ class App extends EventEmitter {
     });
   }
 
-  public async load(services: typeof Service[], controllers: Controller[]): Promise<void> {
-    this.loadProviders(services);
+  public async load(controllers: Controller[]): Promise<void> {
     this.loadPipes();
     this.loadControllers(controllers);
     this.loadFilters();

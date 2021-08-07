@@ -29,6 +29,7 @@
     "@classes": "dist/classes",
     "@exceptions": "dist/exceptions",
     "@filters": "dist/filters",
+    "@guards": "dist/guards",
     "@modules": "dist/modules",
     "@pipes": "dist/pipes",
     "@providers": "dist/providers",

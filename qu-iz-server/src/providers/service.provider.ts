@@ -10,7 +10,7 @@ class ServiceProviderClass {
   }
 
   public get(service: typeof Service): any {
-    return this.instances.get(service) || service;
+    return this.instances.get(service)!;
   }
 }
 

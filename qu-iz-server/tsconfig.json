@@ -10,6 +10,7 @@
       "@classes/*": ["classes/*"],
       "@exceptions/*": ["exceptions/*"],
       "@filters/*": ["filters/*"],
+      "@guards/*": ["guards/*"],
       "@modules/*": ["modules/*"],
       "@pipes/*": ["pipes/*"],
       "@providers/*": ["providers/*"],
