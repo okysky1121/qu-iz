@@ -1,7 +1,8 @@
+import Service from '@services/base.service';
 import User from './user.interface';
 import UserModel from './user.model';
 
-class UserService {
+class UserService extends Service {
   public async get(uuid: string): Promise<void> {}
 
   public async create(): Promise<User> {

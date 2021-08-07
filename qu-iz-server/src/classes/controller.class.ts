@@ -1,3 +1,4 @@
+import ServiceProvider from '@providers/service.provider';
 import AsyncUtil from '@utils/async.util';
 import { Router } from 'express';
 
@@ -25,6 +26,15 @@ abstract class Controller {
   constructor() {
     this.mounter = new ControllerMounter(this.router);
     this.mount();
+  }
+
+  public load(): void {
+    for (const key in this) {
+      if (this[key] instanceof Function) {
+        //@ts-ignore
+        this[key] = ServiceProvider.get(this[key]);
+      }
+    }
   }
 
   protected abstract mount(): void;

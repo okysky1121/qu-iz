@@ -1,11 +1,12 @@
 import Controller from '@classes/controller.class';
+import ServiceProvider from '@providers/service.provider';
 import Jwt from '@utils/jwt.util';
 import UserResponse from './user.response';
 import UserService from './user.service';
 
 class UserController extends Controller {
   public readonly path: string = '/users';
-  private readonly userService: UserService = new UserService();
+  private userService: UserService = ServiceProvider.get(UserService);
 
   protected mount(): void {
     this.mounter.get('/', this.getUser.bind(this));

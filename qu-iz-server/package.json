@@ -31,6 +31,8 @@
     "@filters": "dist/filters",
     "@modules": "dist/modules",
     "@pipes": "dist/pipes",
+    "@providers": "dist/providers",
+    "@services": "dist/services",
     "@utils": "dist/utils"
   }
 }

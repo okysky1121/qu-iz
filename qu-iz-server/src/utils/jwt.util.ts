@@ -24,7 +24,7 @@ class Jwt {
     }
   }
 
-  public static sign(payload: any): string {
+  public static sign(payload: JwtPayload): string {
     return jwt.sign(payload, key);
   }
 }

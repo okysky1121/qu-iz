@@ -12,6 +12,8 @@
       "@filters/*": ["filters/*"],
       "@modules/*": ["modules/*"],
       "@pipes/*": ["pipes/*"],
+      "@providers/*": ["providers/*"],
+      "@services/*": ["services/*"],
       "@utils/*": ["utils/*"]
     },
     "strict": true,
