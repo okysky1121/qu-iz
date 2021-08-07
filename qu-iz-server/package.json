@@ -30,6 +30,7 @@
     "@exceptions": "dist/exceptions",
     "@filters": "dist/filters",
     "@modules": "dist/modules",
+    "@pipes": "dist/pipes",
     "@utils": "dist/utils"
   }
 }

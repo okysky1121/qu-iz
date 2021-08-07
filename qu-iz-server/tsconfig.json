@@ -11,6 +11,7 @@
       "@exceptions/*": ["exceptions/*"],
       "@filters/*": ["filters/*"],
       "@modules/*": ["modules/*"],
+      "@pipes/*": ["pipes/*"],
       "@utils/*": ["utils/*"]
     },
     "strict": true,

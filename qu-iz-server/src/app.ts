@@ -1,5 +1,6 @@
 import Controller from '@classes/controller.class';
 import ExceptionFilter from '@filters/exception.filter';
+import JwtPipe from '@pipes/jwt.pipe';
 import EventEmitter from 'events';
 import express, { Application } from 'express';
 import mongoose from 'mongoose';
@@ -17,6 +18,10 @@ class App extends EventEmitter {
   constructor(port: number) {
     super();
     this.port = port;
+  }
+
+  private loadPipes(): void {
+    JwtPipe.use(this.application);
   }
 
   private loadControllers(controllers: Controller[]): void {
@@ -38,6 +43,7 @@ class App extends EventEmitter {
   }
 
   public async load(controllers: Controller[]): Promise<void> {
+    this.loadPipes();
     this.loadControllers(controllers);
     this.loadFilters();
     await this.loadDatabase();
