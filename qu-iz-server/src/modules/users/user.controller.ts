@@ -1,4 +1,5 @@
 import Controller from '@classes/controller.class';
+import Jwt from '@utils/jwt.util';
 import UserResponse from './user.response';
 import UserService from './user.service';
 
@@ -20,7 +21,11 @@ class UserController extends Controller {
     res: TypedResponse<UserResponse.Create>
   ): Promise<void> {
     const user = await this.userService.create();
-    res.json({ ok: true, nickname: user.nickname, point: user.point });
+
+    const payload: JwtPayload = { uuid: user.uuid };
+    const jwt = Jwt.sign(payload);
+
+    res.json({ ok: true, nickname: user.nickname, point: user.point, jwt });
   }
 }
 
