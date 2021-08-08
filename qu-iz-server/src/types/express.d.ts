@@ -1,6 +1,7 @@
 declare namespace Express {
   interface Request {
     jwt: JwtPayload | null;
+    user?: import('@modules/users/user.interface').default;
   }
 }
 

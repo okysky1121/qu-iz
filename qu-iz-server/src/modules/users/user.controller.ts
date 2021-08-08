@@ -15,8 +15,7 @@ class UserController extends Controller {
   }
 
   private async getUser(req: TypedRequest, res: TypedResponse<UserResponse.Get>): Promise<void> {
-    const user = await this.userService.get(req.jwt!.uuid);
-    if (!user) throw new Error('User is authorized but has invalid uuid');
+    const user = req.user!;
     res.json({ ok: true, nickname: user.nickname, point: user.point, rank: 1 });
   }
 
@@ -30,6 +29,10 @@ class UserController extends Controller {
     const jwt = Jwt.sign(payload);
 
     res.json({ ok: true, nickname: user.nickname, point: user.point, jwt });
+  }
+
+  private async updateUser(req: TypedRequest, res: TypedResponse): Promise<void> {
+    const user = req.user!;
   }
 }
 
