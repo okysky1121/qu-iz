@@ -17,6 +17,12 @@ class UserService extends Service {
 
     return user;
   }
+
+  public async update(user: User, nickname: string): Promise<User> {
+    user.nickname = nickname;
+    await user.save();
+    return user;
+  }
 }
 
 export default UserService;

@@ -2,7 +2,7 @@ import Controller from '@classes/controller.class';
 import ExceptionFilter from '@filters/exception.filter';
 import JwtPipe from '@pipes/jwt.pipe';
 import EventEmitter from 'events';
-import express, { Application } from 'express';
+import express, { Application, json } from 'express';
 import mongoose from 'mongoose';
 
 declare interface App {
@@ -21,6 +21,7 @@ class App extends EventEmitter {
   }
 
   private loadPipes(): void {
+    this.application.use(json());
     JwtPipe.use(this.application);
   }
 

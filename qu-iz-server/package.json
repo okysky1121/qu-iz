@@ -29,6 +29,7 @@
   },
   "_moduleAliases": {
     "@classes": "dist/classes",
+    "@decorators": "dist/decorators",
     "@exceptions": "dist/exceptions",
     "@filters": "dist/filters",
     "@guards": "dist/guards",

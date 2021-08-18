@@ -8,6 +8,7 @@
     "baseUrl": "./src",
     "paths": {
       "@classes/*": ["classes/*"],
+      "@decorators/*": ["decorators/*"],
       "@exceptions/*": ["exceptions/*"],
       "@filters/*": ["filters/*"],
       "@guards/*": ["guards/*"],
