@@ -3,6 +3,28 @@
 
 ![v1](https://user-images.githubusercontent.com/48397257/129847493-9cfe52ce-8849-4a49-9cbd-9e8de07524a1.png)
 
+## Contributers
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/okysky1121">
+        <img src="https://avatars.githubusercontent.com/u/58683489?v=4&s=100" width="100px;" alt=""/>
+        <br />
+        <sub><b>okysky1121</b> (졸려)</sub>
+      </a>
+      <br />
+    </td>
+    <td align="center">
+      <a href="https://github.com/okysky1121">
+        <img src="https://avatars.githubusercontent.com/u/48397257?v=4&s=100" width="100px;" alt=""/>
+        <br />
+        <sub><b>delta-kor</b> (dtxrital)</sub>
+      </a>
+      <br />
+    </td>
+  </tr>
+</table>
+
 ## Tracks
 ### COLOR*IZ
 - 아름다운 색
