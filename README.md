@@ -28,7 +28,7 @@
       <br />
     </td>
     <td align="center">
-      <a href="https://github.com/okysky1121">
+      <a href="https://github.com/delta-kor">
         <img src="https://avatars.githubusercontent.com/u/48397257?v=4&s=100" width="100px;" alt=""/>
         <br />
         <sub><b>delta-kor</b> (dtxrital)</sub>
