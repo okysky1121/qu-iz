@@ -19,7 +19,8 @@ class UserController extends Controller {
 
   private async getUser(req: TypedRequest, res: TypedResponse<UserResponse.Get>): Promise<void> {
     const user = req.user!;
-    res.json({ ok: true, nickname: user.nickname, point: user.point, rank: 1 });
+    const rank = await user.getRank();
+    res.json({ ok: true, nickname: user.nickname, point: user.point, rank });
   }
 
   private async createUser(

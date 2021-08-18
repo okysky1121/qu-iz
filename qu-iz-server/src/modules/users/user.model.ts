@@ -8,6 +8,10 @@ const UserSchema = new Schema<User>({
   point: { type: Number, required: true, default: 0 },
 });
 
+UserSchema.methods.getRank = async function (this: User): Promise<number> {
+  return 1;
+};
+
 const UserModel = model<User>('User', UserSchema);
 
 export default UserModel;
