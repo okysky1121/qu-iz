@@ -3,6 +3,19 @@
 
 ![v1](https://user-images.githubusercontent.com/48397257/129847493-9cfe52ce-8849-4a49-9cbd-9e8de07524a1.png)
 
+## Specification
+### Front-End
+- [typescript](https://www.npmjs.com/package/typescript)
+- [react](https://www.npmjs.com/package/react)
+- [react-router](https://www.npmjs.com/package/react-router)
+- [styled-components](https://www.npmjs.com/package/styled-components)
+
+### Back-End
+- [typescript](https://www.npmjs.com/package/typescript)
+- [express](https://www.npmjs.com/package/express)
+- [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
+- [mongoose](https://www.npmjs.com/package/mongoose)
+
 ## Contributers
 <table>
   <tr>
