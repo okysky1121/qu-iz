@@ -9,6 +9,8 @@ namespace UserResponse {
     nickname: string;
     point: number;
   }
+
+  export interface Update extends ApiResponse {}
 }
 
 export default UserResponse;

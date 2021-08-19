@@ -5,6 +5,7 @@ interface User extends Document {
   nickname: string;
   point: number;
   getRank(): Promise<number>;
+  getToken(): Promise<string>;
 }
 
 export default User;

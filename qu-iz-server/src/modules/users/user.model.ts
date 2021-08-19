@@ -1,3 +1,4 @@
+import Jwt from '@utils/jwt.util';
 import GenerateUUID from '@utils/uuid.util';
 import { model, Schema } from 'mongoose';
 import User from './user.interface';
@@ -10,6 +11,12 @@ const UserSchema = new Schema<User>({
 
 UserSchema.methods.getRank = async function (this: User): Promise<number> {
   return 1;
+};
+
+UserSchema.methods.getToken = async function (this: User): Promise<string> {
+  const payload: JwtPayload = { uuid: this.uuid };
+  const jwt = Jwt.sign(payload);
+  return jwt;
 };
 
 const UserModel = model<User>('User', UserSchema);
