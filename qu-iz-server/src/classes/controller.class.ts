@@ -15,6 +15,10 @@ class ControllerMounter {
   public post(path: string, ...handler: Route[]): void {
     this.router.post(path, ...AsyncUtil(handler));
   }
+
+  public put(path: string, ...handler: Route[]): void {
+    this.router.put(path, ...AsyncUtil(handler));
+  }
 }
 
 abstract class Controller {

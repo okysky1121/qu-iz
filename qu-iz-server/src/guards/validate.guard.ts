@@ -1,14 +1,10 @@
 import UnprocessableEntityException from '@exceptions/unprocessable-entity.exception';
 import { plainToClass } from 'class-transformer';
 import { validate } from 'class-validator';
-import { NextFunction, RequestHandler } from 'express';
+import { NextFunction } from 'express';
 
-function ValidateGuard(
-  type: any,
-  query: boolean = false,
-  skipMissingProperties = false
-): RequestHandler {
-  return function (req: TypedRequest, res: TypedResponse, next: NextFunction) {
+function ValidateGuard(type: any, query: boolean = false, skipMissingProperties = false): Route {
+  return async function (req: TypedRequest, res: TypedResponse, next: NextFunction): Promise<any> {
     validate(plainToClass(type, query ? req.query : req.body), { skipMissingProperties }).then(
       err => {
         if (err.length > 0) {

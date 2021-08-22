@@ -1,7 +1,8 @@
 import Controller from '@classes/controller.class';
 import AuthGuard from '@guards/auth.guard';
+import ValidateGuard from '@guards/validate.guard';
 import ServiceProvider from '@providers/service.provider';
-import Jwt from '@utils/jwt.util';
+import UpdateDto from './dto/update.dto';
 import UserResponse from './user.response';
 import UserService from './user.service';
 
@@ -12,11 +13,13 @@ class UserController extends Controller {
   protected mount(): void {
     this.mounter.get('/', AuthGuard, this.getUser.bind(this));
     this.mounter.post('/', this.createUser.bind(this));
+    this.mounter.put('/', AuthGuard, ValidateGuard(UpdateDto), this.updateUser.bind(this));
   }
 
   private async getUser(req: TypedRequest, res: TypedResponse<UserResponse.Get>): Promise<void> {
     const user = req.user!;
-    res.json({ ok: true, nickname: user.nickname, point: user.point, rank: 1 });
+    const rank = await user.getRank();
+    res.json({ ok: true, nickname: user.nickname, point: user.point, rank });
   }
 
   private async createUser(
@@ -24,15 +27,20 @@ class UserController extends Controller {
     res: TypedResponse<UserResponse.Create>
   ): Promise<void> {
     const user = await this.userService.create();
+    const token = await user.getToken();
 
-    const payload: JwtPayload = { uuid: user.uuid };
-    const jwt = Jwt.sign(payload);
-
-    res.json({ ok: true, nickname: user.nickname, point: user.point, jwt });
+    res.json({ ok: true, nickname: user.nickname, point: user.point, token });
   }
 
-  private async updateUser(req: TypedRequest, res: TypedResponse): Promise<void> {
+  private async updateUser(
+    req: TypedRequest<UpdateDto>,
+    res: TypedResponse<UserResponse.Update>
+  ): Promise<void> {
     const user = req.user!;
+    const updated = await this.userService.update(user, req.body.nickname);
+    const token = await updated.getToken();
+
+    res.json({ ok: true, token });
   }
 }
 
