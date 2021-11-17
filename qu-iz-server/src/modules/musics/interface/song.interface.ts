@@ -1,10 +1,15 @@
 import { Document } from 'mongoose';
 
 enum SongType {
-  TITLE,
-  SUBTITLE,
-  BSIDE,
-  JAPANESE,
+  KOREAN_TITLE,
+  KOREAN_DEFAULT,
+  JAPANESE_TITLE,
+  JAPANESE_DEFAULT,
+  SOLO_TITLE,
+  SOLO_DEFAULT,
+  SINGLE_KOREAN,
+  SINGLE_JAPANESE,
+  SINGLE_ENGLISH
 }
 
 interface Song extends Document {
