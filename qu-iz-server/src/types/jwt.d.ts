@@ -1,3 +1,3 @@
 interface JwtPayload {
-  uuid: string;
+  id: string;
 }

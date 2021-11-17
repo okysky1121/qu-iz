@@ -3,8 +3,8 @@ import User from './user.interface';
 import UserModel from './user.model';
 
 class UserService extends Service {
-  public async get(uuid: string): Promise<User | null> {
-    const user = await UserModel.findOne({ uuid });
+  public async get(id: string): Promise<User | null> {
+    const user = await UserModel.findOne({ id });
     return user || null;
   }
 

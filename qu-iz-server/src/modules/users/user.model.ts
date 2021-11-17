@@ -1,10 +1,10 @@
 import Jwt from '@utils/jwt.util';
-import GenerateUUID from '@utils/uuid.util';
+import GenerateId from '@utils/id.util';
 import { model, Schema } from 'mongoose';
 import User from './user.interface';
 
 const UserSchema = new Schema<User>({
-  uuid: { type: String, required: true, unique: true, default: () => GenerateUUID(8) },
+  id: { type: String, required: true, unique: true, default: () => GenerateId(8) },
   nickname: { type: String, required: true },
   point: { type: Number, required: true, default: 0 },
 });
@@ -14,7 +14,7 @@ UserSchema.methods.getRank = async function (this: User): Promise<number> {
 };
 
 UserSchema.methods.getToken = async function (this: User): Promise<string> {
-  const payload: JwtPayload = { uuid: this.uuid };
+  const payload: JwtPayload = { id: this.id };
   const jwt = Jwt.sign(payload);
   return jwt;
 };
