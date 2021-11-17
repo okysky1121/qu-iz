@@ -8,6 +8,7 @@ interface Album extends Document {
   uuid: string;
   title: string;
   cover: string;
+  type: AlbumType;
 }
 
 export default Album;
