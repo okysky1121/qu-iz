@@ -1,5 +1,6 @@
 import GenerateId from '@utils/id.util';
-import { Schema } from 'mongoose';
+import Jwt from '@utils/jwt.util';
+import { model, Schema } from 'mongoose';
 import User from './user.interface';
 
 const UserSchema = new Schema<User>({
