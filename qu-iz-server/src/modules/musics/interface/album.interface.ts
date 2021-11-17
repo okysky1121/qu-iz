@@ -1,11 +1,14 @@
 import { Document } from 'mongoose';
 
 enum AlbumType {
-  KOREAN, JAPANESE, SOLO, SINGLE
+  KOREAN,
+  JAPANESE,
+  SOLO,
+  SINGLE,
 }
 
 interface Album extends Document {
-  uuid: string;
+  id: string;
   title: string;
   cover: string;
   type: AlbumType;

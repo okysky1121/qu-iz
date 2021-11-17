@@ -9,13 +9,13 @@ enum SongType {
   SOLO_DEFAULT,
   SINGLE_KOREAN,
   SINGLE_JAPANESE,
-  SINGLE_ENGLISH
+  SINGLE_ENGLISH,
 }
 
 interface Song extends Document {
-  uuid: string;
+  id: string;
   title: string;
-  album_uuid: string;
+  album_id: string;
   tags: string[];
   type: SongType;
 }
