@@ -1,4 +1,5 @@
 import Controller from '@classes/controller.class';
+import UnauthorizedException from '@exceptions/unauthorized.exception';
 import ValidateGuard from '@guards/validate.guard';
 import AddAlbumDto from '@modules/musics/dto/add-album.dto';
 import MusicResponse from '@modules/musics/music.response';
@@ -17,6 +18,10 @@ class MusicController extends Controller {
     req: TypedRequest<AddAlbumDto>,
     res: TypedResponse<MusicResponse.AddAlbum>
   ): Promise<void> {
+    if (req.body.key !== process.env.JWT_KEY) {
+      throw new UnauthorizedException();
+    }
+
     const album = await this.musicService.addAlbum(req.body.title, req.body.cover, req.body.type);
     res.json({ id: album.id, title: album.title, cover: album.cover, type: album.type });
   }

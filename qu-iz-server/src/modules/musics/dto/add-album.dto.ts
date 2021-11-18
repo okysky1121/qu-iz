@@ -2,6 +2,9 @@ import { AlbumType } from '@modules/musics/interface/album.interface';
 import { IsNumber, IsString, IsUrl } from 'class-validator';
 
 class AddAlbumDto {
+  @IsString({ message: '인증 키를 입력해주세요' })
+  public key!: string;
+
   @IsString({ message: '앨범 제목을 입력해주세요' })
   public title!: string;
 
