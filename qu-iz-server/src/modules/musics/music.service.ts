@@ -22,7 +22,7 @@ class MusicService extends Service {
     const album = await AlbumModel.findOne({ id: albumId });
     if (!album) throw new NotfoundException('존재하지 않는 앨범 id 이에요');
 
-    const song = new SongModel({ title, albumId, tags, type });
+    const song = new SongModel({ title, dataId, albumId, tags, type });
     await song.save();
     return song;
   }
