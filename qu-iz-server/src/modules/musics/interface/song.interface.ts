@@ -15,7 +15,8 @@ export enum SongType {
 interface Song extends Document {
   id: string;
   title: string;
-  album_id: string;
+  dataId: string;
+  albumId: string;
   tags: string[];
   type: SongType;
 }

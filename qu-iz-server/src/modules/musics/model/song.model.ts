@@ -5,7 +5,8 @@ import { model, Schema } from 'mongoose';
 const SongSchema = new Schema<Song>({
   id: { type: String, required: true, unique: true, default: () => GenerateId(8) },
   title: { type: String, required: true },
-  album_id: { type: String, required: true },
+  dataId: { type: String, required: true },
+  albumId: { type: String, required: true },
   tags: { type: [String], required: true, default: [] },
   type: { type: Number, required: true },
 });
