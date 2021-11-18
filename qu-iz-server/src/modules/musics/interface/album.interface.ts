@@ -1,6 +1,6 @@
 import { Document } from 'mongoose';
 
-enum AlbumType {
+export enum AlbumType {
   KOREAN,
   JAPANESE,
   SOLO,

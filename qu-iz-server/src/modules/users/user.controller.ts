@@ -37,10 +37,9 @@ class UserController extends Controller {
     res: TypedResponse<UserResponse.Update>
   ): Promise<void> {
     const user = req.user!;
-    const updated = await this.userService.update(user, req.body.nickname);
-    const token = await updated.getToken();
+    await this.userService.update(user, req.body.nickname);
 
-    res.json({ ok: true, token });
+    res.json({ ok: true });
   }
 }
 

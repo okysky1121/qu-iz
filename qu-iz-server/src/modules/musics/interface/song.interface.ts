@@ -1,6 +1,6 @@
 import { Document } from 'mongoose';
 
-enum SongType {
+export enum SongType {
   KOREAN_TITLE,
   KOREAN_DEFAULT,
   JAPANESE_TITLE,
@@ -20,5 +20,4 @@ interface Song extends Document {
   type: SongType;
 }
 
-export { SongType };
 export default Song;

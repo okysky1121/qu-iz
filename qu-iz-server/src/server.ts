@@ -1,4 +1,6 @@
 import Controller from '@classes/controller.class';
+import MusicController from '@modules/musics/music.controller';
+import MusicService from '@modules/musics/music.service';
 import UserController from '@modules/users/user.controller';
 import UserService from '@modules/users/user.service';
 import ServiceProvider from '@providers/service.provider';
@@ -9,10 +11,10 @@ dotenv.config();
 
 const port = parseInt(process.env.PORT!) || 3000;
 
-const services = [UserService];
+const services = [UserService, MusicService];
 ServiceProvider.load(services);
 
-const controllers: Controller[] = [new UserController()];
+const controllers: Controller[] = [new UserController(), new MusicController()];
 
 const app = new App(port);
 
