@@ -7,7 +7,7 @@
 ### Front-End
 - [typescript](https://www.npmjs.com/package/typescript)
 - [react](https://www.npmjs.com/package/react)
-- [react-router](https://www.npmjs.com/package/react-router)
+- [react-router-dom](https://www.npmjs.com/package/react-router-dom)
 - [styled-components](https://www.npmjs.com/package/styled-components)
 
 ### Back-End
