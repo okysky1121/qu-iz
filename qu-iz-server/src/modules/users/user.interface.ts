@@ -8,4 +8,10 @@ interface User extends Document {
   getToken(): Promise<string>;
 }
 
+export interface UserRankItem {
+  me: boolean;
+  nickname: string;
+  rank: number;
+}
+
 export default User;

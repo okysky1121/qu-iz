@@ -14,6 +14,7 @@ class UserController extends Controller {
     this.mounter.get('/', AuthGuard, this.getUser.bind(this));
     this.mounter.post('/', this.createUser.bind(this));
     this.mounter.put('/', AuthGuard, ValidateGuard(UpdateDto), this.updateUser.bind(this));
+    this.mounter.get('/rank', AuthGuard, this.getUserRank.bind(this));
   }
 
   private async getUser(req: TypedRequest, res: TypedResponse<UserResponse.Get>): Promise<void> {
@@ -40,6 +41,16 @@ class UserController extends Controller {
     await this.userService.update(user, req.body.nickname);
 
     res.json({ ok: true });
+  }
+
+  private async getUserRank(
+    req: TypedRequest,
+    res: TypedResponse<UserResponse.GetRank>
+  ): Promise<void> {
+    const user = req.user!;
+    const rank = await this.userService.getRank(user);
+
+    res.json({ ok: true, rank });
   }
 }
 
