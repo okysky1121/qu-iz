@@ -1,7 +1,7 @@
 # qu-iz
 [IZ*ONE](https://en.wikipedia.org/wiki/Iz*One, "IZ*ONE (아이즈원)") Interactive Music Quiz Web Application
 
-![v1](https://user-images.githubusercontent.com/48397257/129847493-9cfe52ce-8849-4a49-9cbd-9e8de07524a1.png)
+![image1](https://user-images.githubusercontent.com/48397257/129847493-9cfe52ce-8849-4a49-9cbd-9e8de07524a1.png)
 
 ## Specification
 ### Front-End
