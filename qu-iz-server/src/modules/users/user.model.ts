@@ -11,7 +11,7 @@ const UserSchema = new Schema<User>({
 
 UserSchema.methods.getRank = async function (this: User): Promise<number> {
   const point = this.point;
-  const upperUsers = await UserModel.count({ point: { $gt: point } });
+  const upperUsers = await UserModel.countDocuments({ point: { $gt: point } });
   return upperUsers + 1;
 };
 

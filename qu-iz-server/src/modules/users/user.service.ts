@@ -37,6 +37,7 @@ class UserService extends Service {
         me: isMe,
         nickname: item.nickname,
         rank: await item.getRank(),
+        point: item.point,
       };
       result.push(rankItem);
     }
@@ -47,6 +48,7 @@ class UserService extends Service {
         me: true,
         nickname: user.nickname,
         rank: await user.getRank(),
+        point: user.point,
       };
       result.push(myRankItem);
     }

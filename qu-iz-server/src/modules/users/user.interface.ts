@@ -12,6 +12,7 @@ export interface UserRankItem {
   me: boolean;
   nickname: string;
   rank: number;
+  point: number;
 }
 
 export default User;
