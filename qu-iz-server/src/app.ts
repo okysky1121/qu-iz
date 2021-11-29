@@ -1,5 +1,6 @@
 import Controller from '@classes/controller.class';
 import ExceptionFilter from '@filters/exception.filter';
+import CorsPipe from '@pipes/cors.pipe';
 import JwtPipe from '@pipes/jwt.pipe';
 import EventEmitter from 'events';
 import express, { Application, json } from 'express';
@@ -22,6 +23,7 @@ class App extends EventEmitter {
 
   private loadPipes(): void {
     this.application.use(json());
+    CorsPipe.use(this.application);
     JwtPipe.use(this.application);
   }
 
@@ -36,7 +38,7 @@ class App extends EventEmitter {
   }
 
   private async loadDatabase(): Promise<void> {
-    mongoose.connect(process.env.DB_PATH!, {
+    await mongoose.connect(process.env.DB_PATH!, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex: true,
