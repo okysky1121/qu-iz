@@ -37,6 +37,7 @@
     "@pipes": "dist/pipes",
     "@providers": "dist/providers",
     "@services": "dist/services",
-    "@utils": "dist/utils"
+    "@utils": "dist/utils",
+    "@constants": "dist/constants.js"
   }
 }

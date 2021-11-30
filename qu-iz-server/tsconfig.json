@@ -16,7 +16,8 @@
       "@pipes/*": ["pipes/*"],
       "@providers/*": ["providers/*"],
       "@services/*": ["services/*"],
-      "@utils/*": ["utils/*"]
+      "@utils/*": ["utils/*"],
+      "@constants": ["constants.ts"]
     },
     "strict": true,
     "esModuleInterop": true,
