@@ -5,10 +5,10 @@ declare namespace Express {
   }
 }
 
-type TypedRequest<P = any, Q = any> = import('express').Request<any, any, P, Q>;
+type TypedRequest<P = any, Q = any, R = any> = import('express').Request<R, any, P, Q>;
 type TypedResponse<P = any> = import('express').Response<P>;
 type Route = (
-  req: import('express').Request,
-  res: import('express').Response,
+  req: TypedRequest,
+  res: TypedResponse,
   next: import('express').NextFunction
 ) => Promise<any>;
