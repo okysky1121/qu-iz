@@ -118,4 +118,4 @@
 
 ### ONE, THE STORY
 - Lesson
-- 평행우
+- 평행우주
